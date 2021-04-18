@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-size: 72%;
+  font-family: sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 66px;
+
+  background: #f7f8f9;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  font-size: 1.5rem;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a + a {
+  margin-left: 1.5rem;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+nav a.active::before {
+  content: '';
+  height: 0.2rem;
+  width: 100%;
+  background: rgb(56, 177, 247);
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+}
+
+.icon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  * {
+    font-size: 60%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.open {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .9);
+  }
+
+  nav a + a {
+    margin-left: 0px;
+    margin-top: 1.5rem;
+  }
+
+  .icon {
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon i {
+    width: 100%;
+    height: 2px;
+    background: #222;
+    position: relative
+  }
+  
+  .icon i::before,
+  .icon i::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #222;
+    position: absolute;
+    left: 0;
+  }
+  
+  .icon i::before {
+    top: -0.5rem;
+  }
+  
+  .icon i::after {
+    bottom: -0.5rem;
+  }
+}
